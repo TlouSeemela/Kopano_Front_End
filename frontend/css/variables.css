@@ -12,9 +12,10 @@
   --color-success-soft: #e7f3ef;
   --color-warning: #915907;
   --color-warning-soft: #fdf1cf;
-  --radius-control: 8px;
-  --radius-card: 12px;
-  --radius-large: 16px;
+  --radius-control: 4px;
+  --radius-button: 6px;
+  --radius-card: 8px;
+  --radius-large: 12px;
   --shadow-card: 0 0 0 1px rgb(0 0 0 / 2%), 0 4px 12px rgb(0 0 0 / 5%);
   --sidebar-width: 250px;
 }

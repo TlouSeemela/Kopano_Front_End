@@ -412,7 +412,7 @@ The visual theme takes cues from LinkedIn while retaining Kopano's own product s
 | Success | `#057642` | Provided evidence |
 | Warning | `#915907` | Missing evidence |
 
-Controls use an 8 px radius, cards use 12 px and larger containers use 16 px. Shadows are intentionally subtle.
+Buttons use a 6 px radius, other controls use 4 px, smaller cards use 8 px and main panel cards use 12 px. Shadows are intentionally subtle.
 
 ### Breakpoints
 
@@ -635,4 +635,3 @@ The frontend phase is complete when:
 - No console errors occur during the test checklist.
 - Prototype-only behaviour is clearly labelled.
 - The code remains plain, modular HTML, CSS and JavaScript and is ready to connect to backend APIs.
-

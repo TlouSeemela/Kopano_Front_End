@@ -3,7 +3,7 @@ import { escapeHtml } from './solutions.js';
 
 export const opportunities = [
   { id: 'municipal-services', organisation: 'CPSI', title: 'Improving municipal service fault reporting', description: 'Seeking citizen-focused approaches to report, route and monitor local service disruptions.', type: 'Technology', requirements: 12, match: 91 },
-  { id: 'responsive-government', organisation: 'Public sector', title: 'Digital tools for responsive local government', description: 'Solutions that shorten response times and improve visibility across public service teams.', type: 'Digital services', requirements: 9, match: 84 },
+  { id: 'responsive-government', organisation: 'SITA', title: 'Digital tools for responsive local government', description: 'Solutions that shorten response times and improve visibility across public service teams.', type: 'Digital services', requirements: 9, match: 84 },
   { id: 'community-pilot', organisation: 'Innovation hub', title: 'Community technology pilot programme', description: 'A supported pilot route for technology addressing measurable community needs.', type: 'Pilot', requirements: 7, match: 76 }
 ];
 

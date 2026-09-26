@@ -21,7 +21,7 @@ export function renderOverview(panel, requirementsContainer) {
     <div class="score-ring" style="--score:${score}"><strong>${score}%</strong><small>ready</small></div>
     <div class="readiness-copy"><h2>${escapeHtml(solution.name)}</h2><p>Your strongest areas are problem alignment and prototype maturity. Add evidence to improve this profile.</p><div class="progress"><span style="width:${score}%"></span></div><div class="progress-label"><span>Current readiness</span><strong>${label}</strong></div></div>`;
   requirementsContainer.innerHTML = solution.documents.slice(0, 3).map(item => `
-    <div class="requirement ${item.status === 'Missing' ? '' : 'complete'}"><span class="requirement-icon">${item.status === 'Missing' ? '!' : '✓'}</span><span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.detail)}</small></span></div>`).join('');
+    <div class="requirement"><span><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.detail)}</small></span></div>`).join('');
 }
 
 export { escapeHtml };
