@@ -1,0 +1,24 @@
+.app-shell { display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); min-height: 100dvh; }
+.sidebar { position: sticky; top: 0; z-index: 50; display: flex; flex-direction: column; height: 100dvh; border-right: 1px solid var(--color-border); background: var(--color-surface); }
+.brand-row { display: flex; align-items: center; height: 80px; padding: 0 24px; border-bottom: 1px solid var(--color-border); }
+.brand { color: var(--color-text); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.04em; text-decoration: none; }
+.solution-area { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 12px; padding: 26px 16px 18px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; padding: 0 8px; color: var(--color-muted); font-size: 0.8125rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; }
+.solution-list { display: grid; gap: 6px; overflow-y: auto; }
+.add-solution { margin-top: auto; }
+.workspace { min-width: 0; }
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; min-height: 80px; gap: 24px; padding: 0 32px; border-bottom: 1px solid var(--color-border); background: rgb(255 255 255 / 96%); backdrop-filter: blur(10px); }
+.current-solution { display: grid; min-width: 180px; margin-right: auto; overflow: hidden; }
+.current-solution span { color: var(--color-muted); font-size: 0.8125rem; }
+.current-solution strong { overflow: hidden; font-size: 0.9rem; text-overflow: ellipsis; white-space: nowrap; }
+.top-navigation { display: flex; align-items: center; gap: 4px; }
+.content { width: min(100%, 1500px); padding: 36px 32px 64px; }
+.page-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.page-intro.compact { align-items: flex-start; }
+.page-intro p { margin-bottom: 0; }
+.actions { display: flex; flex-shrink: 0; gap: 8px; }
+.overview-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(300px, 1fr); gap: 24px; }
+.documents-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr); gap: 24px; }
+.match-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.opportunity-list { display: grid; gap: 14px; }
+.drawer-backdrop { position: fixed; inset: 0; z-index: 40; border: 0; background: rgb(22 28 40 / 48%); }

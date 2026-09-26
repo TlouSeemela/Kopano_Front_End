@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kopano helps innovators prepare evidence-backed solutions for public-sector opportunities.">
+  <title>Kopano · Innovator workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a66c2'/%3E%3Cpath d='M9 8v16h4v-6l5 6h5l-7-8 7-8h-5l-5 6V8z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Solution workspace">
+      <div class="brand-row">
+        <a class="brand" href="#" aria-label="Kopano home">Kopano</a>
+        <button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Close navigation">×</button>
+      </div>
+      <div class="solution-area">
+        <div class="section-heading">
+          <span>Solutions</span>
+          <span class="count" id="solution-count">0</span>
+        </div>
+        <div class="solution-list" id="solution-list"></div>
+        <button class="add-solution" id="add-solution" type="button">＋ Add solution</button>
+      </div>
+    </aside>
+
+    <button class="drawer-backdrop" id="drawer-backdrop" type="button" aria-label="Close navigation" hidden></button>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="current-solution">
+          <span>Current solution</span>
+          <strong id="current-solution-name">Municipal fault reporting platform</strong>
+        </div>
+        <nav class="top-navigation" aria-label="Solution navigation">
+          <button class="nav-button active" type="button" data-view="overview">Overview</button>
+          <button class="nav-button" type="button" data-view="opportunities">Opportunities</button>
+          <button class="nav-button" type="button" data-view="documents">Documents</button>
+          <button class="nav-button" type="button" data-view="profile">Solution profile</button>
+        </nav>
+      </header>
+
+      <main class="content" id="main-content" tabindex="-1">
+        <section class="view" id="view-overview" data-page="overview">
+          <div class="page-intro">
+            <div>
+              <h1>Good morning, Naledi</h1>
+              <p>Your solution is close to being ready for its strongest opportunity.</p>
+            </div>
+            <div class="actions">
+              <button class="button secondary" type="button" data-view="profile">Preview profile</button>
+              <button class="button primary" type="button" data-view="opportunities">Find new matches</button>
+            </div>
+          </div>
+          <div class="overview-grid">
+            <article class="panel readiness-panel" id="readiness-panel"></article>
+            <article class="panel requirements-panel">
+              <div class="panel-heading">
+                <h2>Next requirements</h2>
+                <button class="text-button" type="button" data-view="documents">View all</button>
+              </div>
+              <div id="requirements-list"></div>
+            </article>
+          </div>
+          <article class="panel matches-panel">
+            <div class="panel-heading">
+              <div>
+                <span class="overline">Opportunity intelligence</span>
+                <h2>Best matches for your solution</h2>
+              </div>
+              <button class="text-button" type="button" data-view="opportunities">Browse all</button>
+            </div>
+            <div class="match-grid" id="overview-matches"></div>
+          </article>
+        </section>
+
+        <section class="view" id="view-opportunities" data-page="opportunities" hidden>
+          <div class="page-intro compact">
+            <div><h1>Potential matches</h1><p>Matches are recommendations, not endorsements.</p></div>
+          </div>
+          <div class="opportunity-list" id="opportunity-list"></div>
+        </section>
+
+        <section class="view" id="view-documents" data-page="documents" hidden>
+          <div class="page-intro compact">
+            <div><h1>Documents and evidence</h1><p>Upload the core evidence every solution needs. File details stay on this device in the frontend prototype.</p></div>
+          </div>
+          <div class="documents-grid">
+            <article class="panel document-panel">
+              <input id="file-input" type="file" hidden>
+              <div class="document-list" id="document-list"></div>
+            </article>
+            <aside class="panel selected-match" id="selected-match"></aside>
+          </div>
+        </section>
+
+        <section class="view" id="view-profile" data-page="profile" hidden>
+          <div class="page-intro compact">
+            <div><h1>Solution profile</h1><p>This is what a reviewer sees when you share your profile link.</p></div>
+            <div class="actions">
+              <button class="button secondary" type="button" id="reset-access">Reset access</button>
+              <button class="button primary" type="button" id="share-profile">Share profile</button>
+            </div>
+          </div>
+          <div class="profile-stage" id="profile-stage"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <dialog class="dialog compact-dialog" id="solution-actions-dialog">
+    <div class="dialog-header"><div><h2 id="solution-actions-title">Solution options</h2><p>Choose what you want to do with this solution.</p></div><button class="icon-button" type="button" data-close-dialog="solution-actions-dialog" aria-label="Close">×</button></div>
+    <div class="dialog-body action-list">
+      <button class="action-option" id="rename-action" type="button"><span><strong>Rename solution</strong><small>Change the name shown in your workspace.</small></span><span aria-hidden="true">→</span></button>
+      <button class="action-option destructive" id="delete-action" type="button"><span><strong>Delete solution</strong><small>Remove this solution and its saved information.</small></span><span aria-hidden="true">→</span></button>
+      <p class="field-note" id="delete-disabled-note" hidden>You need to keep at least one solution.</p>
+    </div>
+  </dialog>
+
+  <dialog class="dialog compact-dialog" id="rename-dialog">
+    <form id="rename-form">
+      <div class="dialog-header"><div><h2>Rename solution</h2><p>Use a clear name that your team will recognise.</p></div><button class="icon-button" type="button" data-close-dialog="rename-dialog" aria-label="Close">×</button></div>
+      <div class="dialog-body"><label class="field"><span>Solution name</span><input id="rename-input" maxlength="80" required autocomplete="off"></label></div>
+      <div class="dialog-footer"><button class="button secondary" type="button" data-close-dialog="rename-dialog">Cancel</button><button class="button primary" type="submit">Save name</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="dialog compact-dialog" id="delete-dialog">
+    <div class="dialog-header"><div><h2>Delete solution?</h2><p>This action cannot be undone.</p></div><button class="icon-button" type="button" data-close-dialog="delete-dialog" aria-label="Close">×</button></div>
+    <div class="dialog-body"><p id="delete-copy"></p><div class="warning">Its profile, evidence list and opportunity matches will be removed from this device.</div></div>
+    <div class="dialog-footer"><button class="button secondary" type="button" data-close-dialog="delete-dialog">Cancel</button><button class="button danger" id="confirm-delete" type="button">Delete solution</button></div>
+  </dialog>
+
+  <dialog class="dialog compact-dialog" id="share-dialog">
+    <div class="dialog-header"><div><h2>Share innovation profile</h2><p>This prototype creates a local demonstration link.</p></div><button class="icon-button" type="button" data-close-dialog="share-dialog" aria-label="Close">×</button></div>
+    <div class="dialog-body"><label class="field"><span>Profile link</span><span class="copy-field"><input id="profile-link" readonly><button class="button primary" id="copy-link" type="button">Copy</button></span></label><p class="field-note">A secure, externally accessible link will be added with the backend.</p></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

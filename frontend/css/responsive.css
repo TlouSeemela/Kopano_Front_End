@@ -1,0 +1,44 @@
+@media (max-width: 1100px) {
+  .overview-grid, .documents-grid { grid-template-columns: 1fr; }
+  .match-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topbar { padding-inline: 24px; }
+  .content { padding-inline: 24px; }
+  .nav-button { padding-inline: 8px; font-size: 0.82rem; }
+}
+@media (max-width: 920px) {
+  .app-shell { display: block; }
+  .sidebar { position: fixed; left: 0; transform: translateX(-105%); width: min(88vw, var(--sidebar-width)); box-shadow: 10px 0 34px rgb(22 28 40 / 18%); transition: transform 180ms ease; }
+  .sidebar.open { transform: none; }
+  .sidebar-close, .menu-button { display: grid; }
+  .sidebar-close { margin-left: auto; }
+  .topbar { min-height: 72px; }
+  .top-navigation { position: fixed; right: 0; bottom: 0; left: 0; z-index: 25; justify-content: space-around; padding: 7px 8px max(7px, env(safe-area-inset-bottom)); border-top: 1px solid var(--color-border); background: white; }
+  .nav-button { min-height: 42px; flex: 1; }
+  .content { padding-bottom: 96px; }
+}
+@media (max-width: 680px) {
+  .topbar, .content { padding-inline: 16px; }
+  .page-intro { align-items: flex-start; flex-direction: column; }
+  .page-intro .actions { width: 100%; }
+  .page-intro .actions .button { flex: 1; }
+  .match-grid { grid-template-columns: 1fr; }
+  .readiness-panel { grid-template-columns: 1fr; padding: 22px; }
+  .score-ring { width: 112px; }
+  .requirements-panel, .matches-panel, .document-panel, .selected-match { padding: 20px; }
+  .opportunity-card { grid-template-columns: 1fr; padding: 20px; }
+  .opportunity-score { text-align: left; }
+  .document-row-main { grid-template-columns: 1fr; gap: 8px; }
+  .document-actions { justify-content: space-between; }
+  .profile-stage { padding: 0; background: transparent; }
+  .profile-cover { flex-direction: column; padding: 24px; }
+  .profile-body { grid-template-columns: 1fr; padding: 24px; }
+  .copy-field { flex-wrap: wrap; }
+  .copy-field .button { width: 100%; }
+  .dialog-header, .dialog-body { padding: 20px; }
+  .dialog-footer { padding: 0 20px 20px; }
+}
+@media (max-width: 440px) {
+  .current-solution { min-width: 0; }
+  .current-solution strong { max-width: 190px; }
+  .nav-button { padding-inline: 4px; font-size: 0.72rem; }
+}
